@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Define and export the directory of containing the SAMSA2 scripts and databases
-export SAMSA2_DIR=$(dirname "$(realpath "$0")")
+export SAMSA2_DIR=$(dirname "$(realpath "$0")")/..
 
 ######################### Define Flags and Script Help #########################
 function usage() {
