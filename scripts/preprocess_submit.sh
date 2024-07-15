@@ -127,7 +127,7 @@ index=\$((\$SLURM_ARRAY_TASK_ID-1))
 inputFile=\${FILES[\$index]}
 fileName=\$(basename \$inputFile | awk -F "_R1" '{print \$1}')
 
-bash ${SAMSA2_DIR}/preprocess.sh -p ${PROJECT} -d \${DIR} -i \${inputFile} -m ${min_len} -c ${common_script} &>> ${PROJECT}/output/step1_\${fileName}.log
+bash ${SAMSA2_DIR}/scripts/preprocess.sh -p ${PROJECT} -d \${DIR} -i \${inputFile} -m ${min_len} -c ${common_script} &>> ${PROJECT}/output/step1_\${fileName}.log
 
 EOL
 

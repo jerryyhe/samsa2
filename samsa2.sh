@@ -46,11 +46,11 @@ shift
 case "$subcommand" in
     preprocess)
         echo "Running preprocess_submit.sh script..."
-        ${SAMSA2_DIR}/samsa2-master/bash_scripts/preprocess_submit.sh "$@"
+        ${SAMSA2_DIR}/scripts/preprocess_submit.sh "$@"
         ;;
-    subcommand2)
+    align)
         echo "Running align_submit.sh script..."
-        ${SAMSA2_DIR}/align_submit.sh "$@"
+        ${SAMSA2_DIR}/scripts/align_submit.sh "$@"
         ;;
     *)
         echo "Unknown subcommand: $subcommand"
