@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta name="robots" content="noindex"/>
+	
+    <meta charset="utf-8">
+    <title>BIOSHARE - Default title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/static/CACHE/css/adebcd475818.css" type="text/css" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="{% static "lib/bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="/bioshare/jsurls.js"></script>
+    <script type="text/javascript" src="/static/CACHE/js/89f57d95fb36.js"></script>
+  
+  </head>
+
+  <body ng-app="bioshare">
+
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <div class="nav-collapse collapse">
+          <span class="pull-left" style="color: white;font-size: 30px;padding: 10px;">Bioshare</span>
+          <p class="navbar-text pull-right">
+          
+          	  <a href="/accounts/login/" class="navbar-link">Login</a>
+          
+            </p>
+            <ul class="nav pull-right">
+              <li><a href="/">Home</a></li>
+              <li><a target="_blank" href="https://bioshare.readthedocs.io/en/latest/">Help</a></li>
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+	<div class="container-fluid" id="content">
+      <div class="row-fluid">
+        <div class="span3">
+		
+        </div><!--/span-->
+        <div class="span12">
+        	
+			
+<form method="post" action="#">
+  <legend>Login</legend>
+  <input type='hidden' name='csrfmiddlewaretoken' value='2VKcIYsTBsVY3vLPK8YdbQvxkUY4JipPu1OvQO7jyJAUKWuZadi4vTSC6YbIPVDy' /> 
+  
+
+<div id="div_id_username" class="control-group"> <label for="id_username" class="control-label requiredField">
+                Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="username" id="id_username" autofocus required class="textinput textInput" maxlength="254" /> </div> </div> <div id="div_id_password" class="control-group"> <label for="id_password" class="control-label requiredField">
+                Password<span class="asteriskField">*</span> </label> <div class="controls"> <input type="password" name="password" required class="textinput textInput" id="id_password" /> </div> </div>
+
+
+  <button type="submit" class="btn btn-primary">Log in</button>
+  
+  <input type="hidden" name="next" value="/bioshare/download/2c8s521xj9907hn/RefSeq_bac.dmnd" />
+  
+  
+</form>
+
+<p>Forgot password? <a href="/accounts/password_reset/">Reset it</a>!</p>
+<h3>Update: July 15, 2015</h3>
+<p>
+For improved performance, Bioshare has been migrated to a new server.  In addition to hopefully being a bit snappier, Bioshare also now has support for downloading files via SFTP!  For instructions on downloading via SFTP, while viewing a share, click on "Download" then "SFTP".
+</p>
+<p>
+Please report any issues you may encounter to <a href="mailto:webmaster@genomecenter.ucdavis.edu">webmaster@genomecenter.ucdavis.edu</a>.
+</p>
+
+        </div><!--/span-->
+      </div><!--/row-->
+    </div>
+    
+<div class="navbar navbar-bottom">
+	<p class="muted credit pull-left">Bioshare was developed by the <a href="http://bioinformatics.ucdavis.edu">UC Davis Bioinformatics Core</a> and is hosted on <a href="https://github.com/amschaal/bioshare">Github</a>.  Please report any issues to <a 
+href="mailto:webmaster@genomecenter.ucdavis.edu">webmaster@genomecenter.ucdavis.edu</a>.</p>
+	<img src="/static/images/GCWordmark.png" class="pull-right"/>
+</div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+    	var share_autocomplete_url = "/bioshare/api/share_autocomplete/";
+    	var preview_file_url = "/bioshare/preview/000000000000000/";
+    </script>
+    <script type="text/javascript" src="/static/CACHE/js/0abab3c2e2fb.js"></script>
+	
+	
+  </body>
+</html>
