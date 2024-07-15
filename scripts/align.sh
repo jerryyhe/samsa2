@@ -205,5 +205,8 @@ else
   printf  "\tThe variable AGGREG is in the checkpoint file. STEP 5 will be skipped.\n"
 fi
 
-mkdir -p logs
-mv *.logs logs
+mkdir -p ./output/logs
+mv *.logs ./output/logs
+
+mkdir -p slurm_out
+mv e.*.txt o.*.txt slurm_out
