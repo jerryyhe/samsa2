@@ -28,10 +28,23 @@ This samsa2 wrapper pipeline has two main commands, preprocess and align. Prepro
 
 All commands in this samsa2 pipeline require three parameters. First is a project directory specified by `--project_directory` which is the path to the directory where your analysis will take place and is defaulted to the current working directory. In ARC Sockeye, this directory **must** be situated in `scratch` . Additionally, samsa2 also required that path to the directory containing raw sequencing reads specified by `input_directory`. It is highly recommended to have this input situated your project analysis directory in `scratch`. Finally, samsa2 also requires your UBC email for slurm job submission specified by `--email`.  
 
-**Note that all fastq files used as input require `_R1` and `_R2` for paired-end reads and `_R1` for single-end reads.**
+**Note that all fastq files used as input require `_R1` and `_R2` for paired-end reads in respective filenames and `_R1` for single-end reads.**  
 
-#### samsa2.sh
+To perform read preprocessing:
 ```
+samsa2.sh preprocess [-p path to analysis directory] [-i reads input directory] [-e email] [-m minimum read trim length]
+```
+
+To perform read alignment:
+```
+samsa2.sh align [-p path to analysis directory] [-i reads input directory] [-e email] [-d path to diamond database] [-a path to aggregation file]
+```
+---  
+
+
+```
+samsa2.sh -h
+
 Usage: 
     samsa2.sh {preprocess|align}
 
@@ -59,10 +72,16 @@ align:
     -mem, --memory                      The amount of RAM desired for read preprocessing. Default is 64.
 ```
 
-#### preprocess
-Running `samsa2.sh preprocess` will automatically generate and submit a slurm job script to trim, filter, merge, and ribodeplete raw fastq sequencing files. In addition to project and input file directories, this command also requires a `--min_length` parameter which specifies the minimum read length used for read trimming by Trimmomatic.
 
 
-#### align
-Running `samsa2.sh align` will automatically generate and submit a slurm job script that will perform read alignment and generate read counts. Note that you must have created a DIAMOND database with `diamond makedb` to use as the database parameter for this command. 
+## Read preprocessing
+Running `samsa2.sh preprocess` will automatically generate and submit a slurm job script to trim, filter, merge, and ribodeplete raw fastq sequencing files. In addition to project and input file directories, this command also requires a `--min_length` parameter which specifies the minimum read length used for read trimming by Trimmomatic. 
+
+
+## Read alignment
+Running `samsa2.sh align` will automatically generate and submit a slurm job script that will perform read alignment and generate read counts. Note that you must have created a DIAMOND database with `diamond makedb` to use as the database parameter for this command. The `-d` flag specifies the path to the diamond database (the output of `diamond makedb`) and the `-a` flag specifies the path to the aggregation file, or the protein fasta file that was used to generate the diamond database. Diamond databases are used for read alignment whereas the aggregation file is used for generating read counts. 
+
+
+## Diamond databases
+Performing read alignment with DIAMOND requires a DIAMOND database. These databases can be created using a protein fasta file (.faa file) and using the `diamond makedb <fasta-file>` command. Diamond is included in the SAMSA2 conda environment so the above command can be run provided the environment is active. 
 

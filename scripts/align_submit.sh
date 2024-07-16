@@ -8,7 +8,7 @@ function usage() {
     cat <<USAGE
 
     Usage:
-      $0 [-p path to analysis directory] [-i reads input directory] 
+      $0 [-p path to analysis directory] [-i reads input directory] [-e email] [-d path to diamond database] [-a path to aggregation file]
 
     Options:
         -p, --project_directory:            Path of the directory in which you will perform this analysis. Default is the current working directory.

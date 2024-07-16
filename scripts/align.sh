@@ -206,7 +206,7 @@ else
 fi
 
 mkdir -p ./output/logs
-mv *.logs ./output/logs
+mv *.logs ./output/log
 
 mkdir -p slurm_out
 mv e.*.txt o.*.txt slurm_out
