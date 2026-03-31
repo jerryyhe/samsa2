@@ -170,30 +170,30 @@ SORTMERNA="$SORTMERNA_DIR/sortmerna"
 DIAMOND_DIR="$PROGRAMS"
 DIAMOND="$DIAMOND_DIR/diamond"
 
-# Ensure locally-downloaded R packages are usable
-if [[ -n "$R_LIBS" ]]; then
-  R_LIBS="$R_LIBS:$SAMSA/R_scripts/packages"
-else
-  R_LIBS="$SAMSA/R_scripts/packages"
-fi
-export R_LIBS
+## Ensure locally-downloaded R packages are usable
+#if [[ -n "$R_LIBS" ]]; then
+#  R_LIBS="$R_LIBS:$SAMSA/R_scripts/packages"
+#else
+#  R_LIBS="$SAMSA/R_scripts/packages"
+#fi
+#export R_LIBS
 
-# Unless indicated otherwise, ensure the utilities are usable
-if [[ -z "$IGNORE_DEPS" ]]; then
-  if [[ ! -f "$PEAR" ]]; then
-    fatal "PEAR not found (did you extract it?) at $PEAR"
-  fi
-
-  if [[ ! -f "$TRIMMOMATIC" ]]; then
-    fatal "Trimmomatic not found (did you extract it?) at $TRIMMOMATIC"
-  fi
-
-  if [[ ! -f "$SORTMERNA" ]]; then
-    fatal "SortMeRNA not found (did you extract and build it?) at $SORTMERNA"
-  fi
-
-  if [[ ! -f "$DIAMOND" ]]; then
-    fatal "Diamond not found (did you extract it?) at $DIAMOND"
-  fi
-fi
+## Unless indicated otherwise, ensure the utilities are usable
+#if [[ -z "$IGNORE_DEPS" ]]; then
+#  if [[ ! -f "$PEAR" ]]; then
+#    fatal "PEAR not found (did you extract it?) at $PEAR"
+#  fi
+#
+#  if [[ ! -f "$TRIMMOMATIC" ]]; then
+#    fatal "Trimmomatic not found (did you extract it?) at $TRIMMOMATIC"
+#  fi
+#
+#  if [[ ! -f "$SORTMERNA" ]]; then
+#    fatal "SortMeRNA not found (did you extract and build it?) at $SORTMERNA"
+#  fi
+#
+#  if [[ ! -f "$DIAMOND" ]]; then
+#    fatal "Diamond not found (did you extract it?) at $DIAMOND"
+#  fi
+#fi
 
